@@ -1,4 +1,6 @@
 <h1>Litado de Productos</h1>
+<%= link_to "Crear producto", products_new_path%>
+<hr>
 <table>
   <tr>
     <thead>
@@ -15,7 +17,7 @@
       <td>
         <%= link_to "Mostrar", product_path(product)%>
         <%= link_to "Editar", edit_product_path(product)%>
-        <%= link_to "Eliminar"%>
+        <%= link_to "Eliminar", delete_product_path(product), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
       </td>
     </tr>
   <% end%>
