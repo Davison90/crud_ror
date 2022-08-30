@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show, :update]
 
   def index
     @products = Product.all
@@ -24,6 +24,14 @@ class ProductsController < ApplicationController
   end
 
   def show
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to products_path
+    else
+      render :edit
+    end
   end
 
   private
