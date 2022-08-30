@@ -13,8 +13,8 @@
       <td><%= product.description%></td>
       <td><%= product.price%></td>
       <td>
-        <%= link_to "Mostrar"%>
-        <%= link_to "Editar"%>
+        <%= link_to "Mostrar", product_path(product)%>
+        <%= link_to "Editar", edit_product_path(product)%>
         <%= link_to "Eliminar"%>
       </td>
     </tr>
